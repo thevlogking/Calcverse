@@ -303,7 +303,7 @@ h1 {
   }
   .tabs {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 5px;
     justify-items: center;
   }
@@ -323,10 +323,9 @@ h1 {
   }
   .tabs {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 5px;
     justify-items: center;
-  }
 }
 
 /* ===== 768px – 1024px: Tablets ===== */
@@ -354,4 +353,4 @@ h1 {
     font-size: 20px;
   }
 }
-
+}
