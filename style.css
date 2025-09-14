@@ -1,0 +1,349 @@
+/* ===================== VARIABLES ===================== */
+:root {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --muted: #94a3b8;
+  --accent: #f1f5f9;
+  --key: #334155;
+  --key-op: #0ea5e9;
+  --key-hover: #475569;
+}
+
+/* ===================== GLOBAL ===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 480px;
+  width: 100%;
+  background: var(--card);
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  margin: 20px;
+}
+
+h1 {
+  text-align: center;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: var(--accent);
+}
+
+/* ===================== TABS ===================== */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab {
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: transparent;
+  border: 1px solid var(--key);
+  cursor: pointer;
+  color: var(--accent);
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  background: var(--key-hover);
+}
+
+.tab.active {
+  background: var(--key-op);
+  border-color: var(--key-op);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===================== DISPLAY ===================== */
+.display {
+  height: 70px;
+  background: #0f172a;
+  border-radius: 12px;
+  padding: 12px;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.1);
+  overflow-x: auto;
+}
+
+/* ===================== KEYPAD ===================== */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.key {
+  background: var(--key);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--accent);
+  transition: all 0.2s;
+  font-size: 18px;
+  border: none;
+}
+
+.key:hover {
+  background: var(--key-hover);
+}
+
+.key.zero {
+  grid-column: span 2;
+}
+
+.key.op {
+  background: var(--key-op);
+  color: #fff;
+}
+
+/* ===================== PANELS ===================== */
+.panel {
+  display: none;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 12px;
+  background: #1e293b;
+  border: 1px solid #334155;
+  color: var(--muted);
+}
+
+.panel.active {
+  display: block;
+  color: var(--accent);
+}
+
+#basicKeys .keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+#basicKeys .key {
+  background: var(--key);
+  border-radius: 12px;
+  padding: 18px;
+  text-align: center;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 18px;
+  border: none;
+  transition: 0.2s;
+}
+
+#basicKeys .key:hover {
+  background: var(--key-hover);
+}
+
+#basicKeys .key.op {
+  background: var(--key-op);
+  color: #fff;
+}
+
+#basicKeys .key.zero {
+  grid-column: span 2;
+}
+
+
+/* ===================== SCIENTIFIC ===================== */
+#scientificPanel .keypad {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#scientificPanel .key {
+  font-size: 16px;
+  padding: 14px;
+}
+
+/* ===================== PROGRAMMER ===================== */
+#programmerPanel .prog-card {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+#programmerPanel label {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+#programmerPanel input,
+#programmerPanel select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #0f172a;
+  color: #fff;
+  font-size: 16px;
+}
+
+#programmerPanel button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: var(--key-op);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+#programmerPanel button:hover {
+  background: #0284c7;
+}
+
+.prog-results {
+  margin-top: 12px;
+  padding: 12px;
+  background: #1e293b;
+  border-radius: 8px;
+  font-family: monospace;
+}
+
+.prog-results p {
+  margin: 6px 0;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prog-results span {
+  font-weight: 600;
+  color: var(--key-op);
+}
+
+
+/* ===================== CS TOOLS ===================== */
+#cstoolsPanel h3 {
+  margin: 12px 0 6px;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.cs-tool {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+#cstoolsPanel input,
+#cstoolsPanel select {
+  flex: 1 1 120px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #0f172a;
+  color: #fff;
+  font-size: 14px;
+}
+
+#cstoolsPanel button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--key-op);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+#cstoolsPanel button:hover {
+  background: #0284c7;
+}
+
+
+/* ===================== RESPONSIVE BREAKPOINTS ===================== */
+
+/* ===== 320px – 480px: Small Phones ===== */
+@media (min-width: 320px) and (max-width: 480px) {
+  .container {
+    max-width: 90%;
+    padding: 15px;
+  }
+  .display {
+    font-size: 24px;
+    height: 60px;
+  }
+  .key {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* ===== 481px – 767px: Large Phones / Phablets ===== */
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    max-width: 400px;
+    padding: 20px;
+  }
+  .display {
+    font-size: 28px;
+  }
+  .keypad {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== 768px – 1024px: Tablets ===== */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    max-width: 600px;
+  }
+  .display {
+    font-size: 32px;
+  }
+  .keypad {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ===== 1024px and Above: Desktops ===== */
+@media (min-width: 1025px) {
+  .container {
+    max-width: 700px;
+  }
+  .display {
+    font-size: 36px;
+  }
+  .key {
+    font-size: 20px;
+  }
+}
+

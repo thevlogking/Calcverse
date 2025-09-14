@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CalcVerse</title>
+      <link rel="icon" type="png" href="logo.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CalcVerse</h1>
+      <div class="tabs">
+        <button class="tab active" data-tab="basic">Basic</button>
+        <button class="tab" data-tab="scientific">Scientific</button>
+        <button class="tab" data-tab="programmer">Programmer</button>
+        <button class="tab" data-tab="cstools">CS Tools</button>
+      </div>
+
+      <!-- Display -->
+      <div class="display" id="display">0</div>
+
+      <!-- BASIC KEYS -->
+<div id="basicKeys" class="panel active">
+  <div class="keypad">
+    <!-- Top Row: AC, Backspace, +/- , % -->
+    <button class="key op">AC</button>
+    <button class="key op">←</button>
+    <button class="key op">+/-</button>
+    <button class="key op">%</button>
+
+    <!-- Numbers and Operators -->
+    <button class="key">7</button>
+    <button class="key">8</button>
+    <button class="key">9</button>
+    <button class="key op">÷</button>
+
+    <button class="key">4</button>
+    <button class="key">5</button>
+    <button class="key">6</button>
+    <button class="key op">×</button>
+
+    <button class="key">1</button>
+    <button class="key">2</button>
+    <button class="key">3</button>
+    <button class="key op">−</button>
+
+    <button class="key zero">0</button>
+    <button class="key">.</button>
+    <button class="key op">+</button>
+    <button class="key op">=</button>
+  </div>
+</div>
+
+      <!-- SCIENTIFIC PANEL -->
+<div id="scientificPanel" class="panel">
+  <div class="keypad" id="scientificKeys">
+    <!-- Top Row: AC, Backspace, Parentheses -->
+    <button class="key op">AC</button>
+    <button class="key op">←</button>
+    <button class="key">(</button>
+    <button class="key">)</button>
+
+    <!-- Functions -->
+    <button class="key">sin</button>
+    <button class="key">cos</button>
+    <button class="key">tan</button>
+    <button class="key">ln</button>
+    <button class="key">log</button>
+    <button class="key">√</button>
+    <button class="key">x²</button>
+    <button class="key">xʸ</button>
+    <button class="key">!</button>
+    <button class="key">π</button>
+    <button class="key">e</button>
+
+    <!-- Numbers -->
+    <button class="key">7</button>
+    <button class="key">8</button>
+    <button class="key">9</button>
+    <button class="key">4</button>
+    <button class="key">5</button>
+    <button class="key">6</button>
+    <button class="key">1</button>
+    <button class="key">2</button>
+    <button class="key">3</button>
+    <button class="key zero">0</button>
+    <button class="key">.</button>
+
+    <!-- Operators -->
+    <button class="key op">%</button>
+    <button class="key op">÷</button>
+    <button class="key op">×</button>
+    <button class="key op">−</button>
+    <button class="key op">+</button>
+    <button class="key op">=</button>
+  </div>
+</div>
+
+
+
+      <!-- PROGRAMMER PANEL -->
+<div id="programmerPanel" class="panel">
+  <div class="prog-card">
+    <input type="text" id="progInput" placeholder="Enter number" />
+    <select id="progBase">
+      <option value="2">Binary</option>
+      <option value="8">Octal</option>
+      <option value="10" selected>Decimal</option>
+      <option value="16">Hex</option>
+    </select>
+    <select id="progOutputUnit">
+      <option value="BIN">BIN</option>
+      <option value="OCT">OCT</option>
+      <option value="DEC" selected>DEC</option>
+      <option value="HEX">HEX</option>
+    </select>
+  </div>
+</div>
+
+
+ <!-- ===================== CS TOOLS ===================== -->
+<div class="panel" id="cstoolsPanel">
+  <h3>ASCII Converter</h3>
+  <div class="cs-tool">
+    <input type="text" id="asciiInput" placeholder="Enter text" />
+    <button id="asciiConvert">Convert</button>
+  </div>
+
+  <h3>File Size Converter</h3>
+  <div class="cs-tool">
+    <input type="number" id="fileInput" placeholder="Enter size" />
+    <select id="fileInputUnit">
+      <option value="B">Bytes</option>
+      <option value="KB">KB</option>
+      <option value="MB">MB</option>
+      <option value="GB">GB</option>
+    </select>
+    <select id="fileOutputUnit">
+      <option value="B">Output: Bytes</option>
+      <option value="KB">Output: KB</option>
+      <option value="MB">Output: MB</option>
+      <option value="GB">Output: GB</option>
+    </select>
+    <button id="fileConvert">Convert</button>
+  </div>
+</div>
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
